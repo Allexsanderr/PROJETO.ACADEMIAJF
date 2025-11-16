@@ -125,20 +125,8 @@
     └── copilot-instructions.md → Documentação técnica
 ```
 
----
 
-## 🛠️ Stack Tecnológico
 
-| Camada | Tecnologia | Versão |
-|--------|-----------|--------|
-| **Frontend** | HTML5 + CSS3 + JS Vanilla | ES6+ |
-| **UI/UX** | Poppins Font + Dark Mode | Modern |
-| **Persistência** | localStorage + JSON | Client-side |
-| **Segurança** | SHA-256 + Salt + Tokens | Enterprise |
-| **Responsividade** | Media Queries | Mobile First |
-| **Performance** | Zero Dependencies | Lightweight |
-
----
 
 ## ⚡ Quick Start
 
