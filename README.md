@@ -34,35 +34,15 @@
 
 ## 📸 Screenshots
 
-### 🏠 Home - Desktop
-![Home Desktop](https://via.placeholder.com/1200x600?text=Home+Desktop+-+Academia+Prime)
+### Capturas do Projeto
 
-*Screenshot da página inicial com hero section, planos e features.*
-
-### 📱 Home - Mobile
-![Home Mobile](https://via.placeholder.com/400x800?text=Home+Mobile+-+Academia+Prime)
-
-*Layout responsivo da home em dispositivo móvel.*
-
-### 💪 Área do Aluno - Desktop
-![Área do Aluno](https://via.placeholder.com/1200x600?text=Área+do+Aluno+-+Ficha+de+Treino)
-
-*Editor de fichas de treino com seleção de dias e exercícios.*
-
-### � Avaliação Médica
-![Avaliação Médica](https://via.placeholder.com/1200x600?text=Agendamento+de+Avaliação+Médica)
-
-*Página de agendamento com seleção de data, hora e médico.*
-
-### 🏋️ Galeria - Conhecer a Academia
-![Galeria](https://via.placeholder.com/1200x600?text=Galeria+da+Academia+-+Cards+Responsivos)
-
-*Galeria de fotos da academia com cards responsivos.*
-
-### 📱 Mobile Menu
-![Mobile Menu](https://via.placeholder.com/400x600?text=Mobile+Menu+Hamburguês)
-
-*Menu mobile hamburguês em ação.*
+![Screenshot 1](screenshots/Captura%20de%20tela%202025-11-16%20081512.png)
+![Screenshot 2](screenshots/Captura%20de%20tela%202025-11-16%20081426.png)
+![Screenshot 3](screenshots/Captura%20de%20tela%202025-11-16%20081303.png)
+![Screenshot 4](screenshots/Captura%20de%20tela%202025-11-16%20081226.png)
+![Screenshot 5](screenshots/Captura%20de%20tela%202025-11-16%20081107.png)
+![Screenshot 6](screenshots/Captura%20de%20tela%202025-11-16%20081046.png)
+![Screenshot 7](screenshots/Captura%20de%20tela%202025-11-16%20081016.png)
 
 ---
 
