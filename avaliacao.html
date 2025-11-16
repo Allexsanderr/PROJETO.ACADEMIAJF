@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Avaliação Médica — Academia Prime</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .avaliacao-container {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 24px;
+      background: #121212;
+      border: 1px solid #1d1d1d;
+      border-radius: 16px;
+      box-shadow: 0 20px 40px rgba(0,0,0,.35);
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--text);
+      font-size: 14px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: #141414;
+      border: 1px solid #1d1d1d;
+      color: var(--text);
+      padding: 12px;
+      border-radius: 8px;
+      font-family: inherit;
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 12px rgba(255,204,0,.2);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 80px;
+    }
+    .appointments-list {
+      margin-top: 32px;
+      padding-top: 24px;
+      border-top: 1px solid #1d1d1d;
+    }
+    .appointment-item {
+      background: #0f0f0f;
+      border: 1px solid #1d1d1d;
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 12px;
+      display: grid;
+      gap: 8px;
+    }
+    .appointment-date {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .appointment-detail {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .success-message {
+      background: rgba(35,209,96,.1);
+      border: 1px solid #23d160;
+      color: #56db78;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      display: none;
+      animation: slideDown 0.3s ease-out;
+    }
+    .error-message {
+      background: rgba(255,59,48,.1);
+      border: 1px solid #ff3b30;
+      color: #ff6b6b;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      display: none;
+    }
+    .spinner {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(255,204,0,.3);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin .6s linear infinite;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .btn-full {
+      width: 100%;
+    }
+    .doctors-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 8px;
+    }
+    .doctor-option {
+      background: #0f0f0f;
+      border: 2px solid #1d1d1d;
+      color: var(--text);
+      padding: 12px;
+      border-radius: 8px;
+      cursor: pointer;
+      text-align: center;
+      transition: all 0.3s ease;
+      font-weight: 500;
+      font-size: 13px;
+    }
+    .doctor-option:hover {
+      border-color: var(--primary);
+      background: rgba(255,204,0,.05);
+    }
+    .doctor-option.selected {
+      border-color: var(--primary);
+      background: rgba(255,204,0,.2);
+      color: var(--primary);
+    }
+    .nav-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      text-decoration: none;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .nav-back:hover {
+      gap: 12px;
+    }
+    @media (max-width: 640px) {
+      .avaliacao-container {
+        margin: 20px auto;
+        padding: 16px;
+      }
+      .doctors-grid {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-glow"></div>
+  
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <svg class="brand-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="50" cy="50" r="48" fill="none" stroke="#ffcc00" stroke-width="2"/>
+          <path d="M 50 15 L 75 75 L 25 75 Z" fill="#ffcc00"/>
+          <line x1="30" y1="65" x2="70" y2="65" stroke="#ffcc00" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">Academia Prime</span>
+      </div>
+      <nav class="nav-links" id="mobile-nav">
+        <a href="index.html#hero" class="nav-link">Início</a>
+        <a href="index.html#features" class="nav-link">Serviços</a>
+        <a href="index.html#plans" class="nav-link">Planos</a>
+        <a href="index.html#aluno" class="nav-link">Área do Aluno</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="avaliacao-container">
+      <a href="index.html" class="nav-back">← Voltar</a>
+      
+      <h1 style="margin:0 0 8px;font-size:28px;color:var(--text)">👨‍⚕️ Avaliação Médica</h1>
+      <p style="margin:0 0 24px;color:var(--muted);font-size:14px;line-height:1.6">Agende uma avaliação com um de nossos médicos especializados. Essa avaliação é essencial para personalizar seu plano de treino e garantir sua segurança.</p>
+
+      <div id="success-msg" class="success-message">✅ <strong>Agendamento realizado com sucesso!</strong> Você receberá uma confirmação em breve.</div>
+      <div id="error-msg" class="error-message">❌ <strong>Erro!</strong> Preencha todos os campos obrigatórios.</div>
+
+      <form id="form-agendamento" style="background:#0f0f0f;border:1px solid #1d1d1d;border-radius:12px;padding:20px;margin-bottom:24px">
+        <h3 style="margin:0 0 16px;color:var(--primary);font-size:16px">📋 Dados do Agendamento</h3>
+
+        <div class="form-group">
+          <label for="appt-date">📅 Data da Avaliação <span style="color:var(--danger)">*</span></label>
+          <input type="date" id="appt-date" required>
+        </div>
+
+        <div class="form-group">
+          <label for="appt-time">🕐 Horário <span style="color:var(--danger)">*</span></label>
+          <input type="time" id="appt-time" required>
+        </div>
+
+        <div class="form-group">
+          <label>👨‍⚕️ Selecione o Médico <span style="color:var(--danger)">*</span></label>
+          <div class="doctors-grid">
+            <button type="button" class="doctor-option" data-doctor="Dr. João Silva" title="Especialista em Musculação">
+              👨‍⚕️ João Silva
+            </button>
+            <button type="button" class="doctor-option" data-doctor="Dra. Ana Pereira" title="Especialista em Cardio">
+              👩‍⚕️ Ana Pereira
+            </button>
+            <button type="button" class="doctor-option" data-doctor="Dr. Carlos Costa" title="Especialista em Lesões">
+              👨‍⚕️ Carlos Costa
+            </button>
+          </div>
+          <input type="hidden" id="selected-doctor">
+        </div>
+
+        <div class="form-group">
+          <label for="appt-notes">📝 Observações (Histórico médico, alergias, etc)</label>
+          <textarea id="appt-notes" placeholder="Ex: Histórico de pressão alta, alergia a medicamentos..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-full" style="padding:14px;font-weight:600">📅 Confirmar Agendamento</button>
+      </form>
+
+      <div class="appointments-list" id="appointments-section" style="display:none">
+        <h3 style="margin:0 0 16px;color:var(--primary);font-size:16px">📝 Seus Agendamentos</h3>
+        <div id="appointments-list"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© Academia Prime</div>
+      <div class="footer-links">
+        <a href="index.html">Voltar</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const qs = s => document.querySelector(s);
+    const qsa = s => document.querySelectorAll(s);
+
+    const form = qs('#form-agendamento');
+    const dateInput = qs('#appt-date');
+    const timeInput = qs('#appt-time');
+    const selectedDoctorInput = qs('#selected-doctor');
+    const notesInput = qs('#appt-notes');
+    const successMsg = qs('#success-msg');
+    const errorMsg = qs('#error-msg');
+    const appointmentsList = qs('#appointments-list');
+    const appointmentsSection = qs('#appointments-section');
+
+    // Definir data mínima (hoje)
+    function setMinDate() {
+      const today = new Date().toISOString().split('T')[0];
+      dateInput.min = today;
+    }
+
+    // Selecionar médico
+    qsa('.doctor-option').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        qsa('.doctor-option').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+        selectedDoctorInput.value = btn.dataset.doctor;
+      });
+    });
+
+    // Carregar agendamentos do localStorage
+    function loadAppointments() {
+      try {
+        return JSON.parse(localStorage.getItem('medical-appointments') || '[]');
+      } catch {
+        return [];
+      }
+    }
+
+    // Salvar agendamentos no localStorage
+    function saveAppointments(arr) {
+      localStorage.setItem('medical-appointments', JSON.stringify(arr));
+    }
+
+    // Renderizar lista de agendamentos
+    function renderAppointments() {
+      const appointments = loadAppointments();
+      
+      if (appointments.length === 0) {
+        appointmentsSection.style.display = 'none';
+        return;
+      }
+
+      appointmentsSection.style.display = 'block';
+      appointmentsList.innerHTML = appointments.map(appt => {
+        const dateFmt = new Date(appt.date).toLocaleDateString('pt-BR', {
+          weekday: 'short',
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric'
+        });
+        return `
+          <div class="appointment-item">
+            <div class="appointment-date">${dateFmt} às ${appt.time}</div>
+            <div class="appointment-detail">👨‍⚕️ ${appt.doctor}</div>
+            ${appt.notes ? `<div class="appointment-detail">📝 ${appt.notes}</div>` : ''}
+            <div style="margin-top:8px;padding-top:8px;border-top:1px solid #1d1d1d">
+              <span style="font-size:11px;color:var(--muted)">Agendado em ${new Date(appt.created).toLocaleDateString('pt-BR')}</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    }
+
+    // Enviar formulário
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      successMsg.style.display = 'none';
+      errorMsg.style.display = 'none';
+
+      const date = dateInput.value;
+      const time = timeInput.value;
+      const doctor = selectedDoctorInput.value;
+      const notes = notesInput.value.trim();
+
+      // Validação
+      if (!date || !time || !doctor) {
+        errorMsg.style.display = 'block';
+        return;
+      }
+
+      // Validar data
+      const today = new Date().toISOString().split('T')[0];
+      if (date < today) {
+        errorMsg.innerHTML = '❌ A data não pode ser no passado.';
+        errorMsg.style.display = 'block';
+        return;
+      }
+
+      // Simular envio com spinner
+      const btn = form.querySelector('button[type="submit"]');
+      const originalText = btn.textContent;
+      btn.innerHTML = '<span class="spinner"></span>Agendando...';
+      btn.disabled = true;
+
+      setTimeout(() => {
+        const appointments = loadAppointments();
+        appointments.push({
+          date,
+          time,
+          doctor,
+          notes,
+          created: Date.now()
+        });
+        saveAppointments(appointments);
+        renderAppointments();
+
+        successMsg.style.display = 'block';
+        btn.textContent = originalText;
+        btn.disabled = false;
+        form.reset();
+        selectedDoctorInput.value = '';
+        qsa('.doctor-option').forEach(b => b.classList.remove('selected'));
+
+        setTimeout(() => {
+          successMsg.style.display = 'none';
+        }, 5000);
+      }, 600);
+
+       // Atualizar lembretes na página principal
+       if (window.opener && window.opener.renderReminders) {
+         window.opener.renderReminders();
+       }
+    });
+
+    // Inicializar
+    setMinDate();
+    renderAppointments();
+  </script>
+</body>
+</html>

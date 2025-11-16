@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Academia Prime JF</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-glow"></div>
+  <header class="header">
+    <div class="container nav">
+      <div class="brand">
+        <svg class="brand-logo" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+          <!-- Círculo externo -->
+          <circle cx="50" cy="50" r="48" fill="none" stroke="#ffcc00" stroke-width="2"/>
+          <!-- Triângulo (pico de força) -->
+          <path d="M 50 15 L 75 75 L 25 75 Z" fill="#ffcc00"/>
+          <!-- Barra horizontal (força) -->
+          <line x1="30" y1="65" x2="70" y2="65" stroke="#ffcc00" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span class="brand-name">Academia Prime</span>
+      </div>
+      <nav class="nav-links" id="mobile-nav">
+        <a href="#hero" class="nav-link">Início</a>
+        <a href="#features" class="nav-link">Serviços</a>
+        <a href="#plans" class="nav-link">Planos</a>
+        <a href="#aluno" class="nav-link">Área do Aluno</a>
+        <a href="conhecer.html" class="nav-link">Conhecer a Academia</a>
+      </nav>
+      <div class="actions">
+        <a href="avaliacao.html" class="btn btn-ghost" style="font-size:13px">Avaliação Médica</a>
+        <div id="digital-clock" class="digital-clock">
+          <span id="clock-time">00:00:00</span>
+        </div>
+        <button id="btn-login" class="btn btn-ghost">Login</button>
+        <button id="btn-register" class="btn btn-primary">Registrar</button>
+        <button id="btn-user" class="btn btn-user hidden"></button>
+        <button id="btn-logout" class="btn btn-ghost hidden">Sair</button>
+        <button id="btn-menu" class="btn btn-icon" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">☰</button>
+      </div>
+    </div>
+    <div id="nav-overlay" class="nav-overlay hidden"></div>
+  </header>
+
+  <!-- SEÇÃO DE LEMBRETES -->
+  <div id="reminders-banner" style="background:linear-gradient(135deg, rgba(255,204,0,.12), rgba(255,217,58,.08));border-bottom:1px solid #1d1d1d;padding:12px 0;display:none">
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div id="reminders-content" class="reminders-left" style="flex:1;min-width:0">
+        <!-- Reminders renderizados aqui -->
+      </div>
+      <button id="close-reminders" style="background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:18px;padding:0;flex-shrink:0">✕</button>
+    </div>
+  </div>
+
+  <section id="hero" class="hero">
+    <div class="container hero-content">
+      <h1 class="hero-title">
+        <span class="title-line"></span>Treine Forte.</span>
+        <span class="title-line accent">Evolua Sempre.</span>
+      </h1>
+      <p class="hero-subtitle">Sua transformação começa agora. Cada série, cada repetição, cada dia é um passo em direção à melhor versão de você.</p>
+      <div class="hero-cta">
+        <button class="btn btn-primary btn-lg" id="cta-start">Comece Agora</button>
+        <button class="btn btn-ghost btn-lg" id="cta-see">Ver Planos</button>
+      </div>
+      <div class="stats reveal">
+        <div class="stat">
+          <div class="stat-value">200</div>
+          <div class="stat-label">Alunos ativos</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">24/7</div>
+          <div class="stat-label">Acesso</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">19</div>
+          <div class="stat-label">Treinadores</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-bg"></div>
+  </section>
+
+  <section id="features" class="features">
+    <div class="container">
+      <h2 class="section-title"></h2>
+      <div class="grid">
+        <div class="card reveal">
+          <div class="card-icon">🏋️</div>
+          <div class="card-title">Equipamentos Premium</div>
+          <div class="card-text">Máquinas de última geração para máxima performance.</div>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">⚡</div>
+          <div class="card-title">Treinos Personalizados</div>
+          <div class="card-text">Planos sob medida de acordo com seus objetivos.</div>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🧠</div>
+          <div class="card-title">Acompanhamento Profissional</div>
+          <div class="card-text">Evolução constante com orientação especializada.</div>
+        </div>
+        <div class="card reveal">
+          <div class="card-icon">🔥</div>
+          <div class="card-title">Aulas Dinâmicas</div>
+          <div class="card-text">Programas com alta energia e motivação.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="plans" class="plans">
+    <div class="container">
+      <h2 class="section-title">Escolha Seu Plano</h2>
+      <div class="grid plans-grid">
+  <div class="plan reveal" data-plan="mensal">
+          <div class="plan-name">Mensal</div>
+          <div class="plan-price">R$ 0</div>
+          <ul class="plan-list">
+            <li>Acesso total</li>
+            <li>Aulas coletivas</li>
+            <li>Avaliação física</li>
+        
+          </ul>
+          <button class="btn btn-primary plan-signup" data-plan="mensal">Assinar</button>
+        </div>
+  <div class="plan plan-featured reveal" data-plan="semestral">
+          <div class="plan-name">Semestral</div>
+          <div class="plan-price">R$ 0</div>
+          <ul class="plan-list">
+            <li>Personal trainer</li>
+            <li>Plano nutricional</li>
+            <li>Área VIP</li>
+          </ul>
+          <button class="btn btn-primary plan-signup" data-plan="semestral">Assinar</button>
+        </div>
+  <div class="plan reveal" data-plan="anual">
+          <div class="plan-name">Anual</div>
+          <div class="plan-price">R$ 0</div>
+          <ul class="plan-list">
+            <li>Consultas mensais</li>
+            <li>Workshops exclusivos</li>
+            <li>Suporte 24/7</li>
+          </ul>
+          <button class="btn btn-primary plan-signup" data-plan="anual">Assinar</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="aluno" class="aluno">
+    <div class="container">
+      <h2 class="section-title">Área do Aluno & Avaliações</h2>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:20px">
+        <!-- COLUNA 1: ÁREA DO ALUNO -->
+        <div style="background:#121212;border:1px solid #1d1d1d;border-radius:16px;padding:24px;box-shadow:var(--shadow)">
+          <div id="aluno-locked" class="locked" style="background:transparent;border:0;padding:0;box-shadow:none">
+            <p style="margin-bottom:16px">Faça login para editar sua ficha de treino.</p>
+            <div class="locked-actions">
+              <button class="btn btn-primary" id="lock-login">entrar</button>
+              <button class="btn btn-ghost" id="lock-register">Registrar</button>
+            </div>
+          </div>
+          <div id="aluno-area" class="aluno-area hidden" style="background:transparent;border:0;padding:0;box-shadow:none">
+            <div class="aluno-header">
+              <div class="aluno-user">
+                <div id="aluno-user-name" style="font-size:18px;font-weight:700">👤 <span id="user-name-display"></span></div>
+                <div class="aluno-user-mail" id="aluno-user-mail" style="font-size:13px;color:var(--muted)"></div>
+              </div>
+              <div class="aluno-actions">
+                <button class="btn btn-ghost" id="btn-clear">🗑️ Limpar Ficha</button>
+                <button class="btn btn-primary" id="btn-save">💾 Salvar</button>
+              </div>
+            </div>
+            
+            <!-- CARD: RESUMO DO DIA -->
+            <div id="day-summary-card" style="background:linear-gradient(135deg, rgba(255,204,0,.08), rgba(255,217,58,.05));border:1px solid #1d1d1d;border-radius:12px;padding:16px;margin-bottom:16px;display:none">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+                <span id="day-emoji" style="font-size:24px"></span>
+                <div>
+                  <h4 id="day-name" style="margin:0;color:var(--primary);font-size:16px;font-weight:700"></h4>
+                  <p id="day-subtitle" style="margin:0;font-size:11px;color:var(--muted)"></p>
+                </div>
+              </div>
+              <div id="day-exercises-summary" style="display:grid;gap:8px"></div>
+            </div>
+            
+            <div class="aluno-controls" style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px;padding:12px;background:#0f0f0f;border-radius:12px;border:1px solid #1d1d1d">
+              <div style="display:flex;align-items:center;gap:8px">
+                <label for="select-day" style="font-weight:600;color:var(--text)">📅 Selecionar Dia</label>
+                <select id="select-day" class="select" style="min-width:140px">
+                  <option>Segunda</option>
+                  <option>Terça</option>
+                  <option>Quarta</option>
+                  <option>Quinta</option>
+                  <option>Sexta</option>
+                  <option>Sábado</option>
+                  <option>Domingo</option>
+                </select>
+              </div>
+              <div style="display:flex;gap:8px;flex-wrap:wrap">
+                <button class="btn btn-ghost" id="btn-add-row" style="font-size:13px">➕ Novo Exercício</button>
+                <button class="btn btn-ghost" id="btn-full-view" style="font-size:13px">📋 Ver Tudo</button>
+              </div>
+            </div>
+            <div style="margin-bottom:12px;display:flex;justify-content:space-between;align-items:center">
+              <h4 style="margin:0;color:var(--primary);font-size:14px">🏋️ Exercícios do Dia</h4>
+              <span id="exercise-count" style="font-size:12px;color:var(--muted)">0 exercício(s)</span>
+            </div>
+            <div class="table-wrap" style="border:0;overflow:visible">
+              <div id="plan-body" style="display:grid;gap:10px"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUNA 2: AVALIAÇÃO MÉDICA -->
+        <div id="avaliacao-card" class="locked" style="background:#121212;border:1px solid #1d1d1d;border-radius:16px;padding:24px;box-shadow:var(--shadow)">
+          <h3 style="margin:0 0 12px;font-size:18px;display:flex;align-items:center;gap:8px">
+            👨‍⚕️ Avaliação Médica
+          </h3>
+          <p style="color:var(--muted);margin:0 0 16px;line-height:1.5">Agende uma avaliação médica com nossos profissionais especializados. Importante para entender sua saúde e adaptar o treino.</p>
+          <div class="locked-actions">
+            <a href="avaliacao.html" class="btn btn-primary" style="text-decoration:none;display:inline-block;text-align:center">
+              📅 Agendar Avaliação
+            </a>
+          </div>
+          <div style="margin-top:16px;padding-top:16px;border-top:1px solid #222">
+            <div style="font-size:13px;color:var(--muted)">
+              <p style="margin:0 0 8px"><strong style="color:var(--text)">✓ Avaliação Profissional</strong><br>Realizada por médicos especializados</p>
+              <p style="margin:0 0 8px"><strong style="color:var(--text)">✓ Histórico Completo</strong><br>Todos os seus agendamentos salvos localmente</p>
+              <p style="margin:0"><strong style="color:var(--text)">✓ Adaptação de Treino</strong><br>Resultados usados para personalizar seu plano</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>© Academia Prime, Juiz de fora</div>
+      <div class="footer-links">
+        <a href="#">Termos</a>
+        <a href="#">Privacidade</a>
+        <a href="#">Contato</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal hidden" id="full-view-modal" aria-hidden="true" role="dialog">
+    <div class="modal-overlay" id="full-view-overlay"></div>
+    <div class="modal-content" style="max-width:900px;max-height:85vh;overflow-y:auto">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px">
+        <h3 style="margin:0;font-size:20px">📋 Ficha Completa da Semana</h3>
+        <button class="modal-close" id="close-full-view" aria-label="Fechar">✕</button>
+      </div>
+      <div id="full-view-content"></div>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="auth-modal" aria-hidden="true" role="dialog">
+    <div class="modal-overlay" id="auth-overlay"></div>
+    <div class="modal-content">
+      <div class="modal-tabs">
+        <button class="tab-btn active" data-tab="login">Login</button>
+        <button class="tab-btn" data-tab="register">Registrar</button>
+      </div>
+      <div class="tab-panel" id="tab-login">
+        <form id="form-login" class="form">
+          <div class="form-field">
+            <label>Email</label>
+            <input type="email" id="login-email" required>
+          </div>
+          <div class="form-field">
+            <label>Senha</label>
+            <input type="password" id="login-password" required>
+          </div>
+          <div id="login-error" class="form-error hidden">
+            <p>❌ Email ou senha incorretos. Tente novamente.</p>
+          </div>
+          <button class="btn btn-primary btn-full" type="submit">Entrar</button>
+          <div class="form-recovery">
+            <a href="#" id="forgot-password" class="recovery-link">Esqueceu sua senha?</a>
+          </div>
+        </form>
+      </div>
+      <div class="tab-panel hidden" id="tab-register">
+        <form id="form-register" class="form">
+          <div class="form-field">
+            <label>Nome</label>
+            <input type="text" id="register-name" required>
+          </div>
+          <div class="form-field">
+            <label>Email</label>
+            <input type="email" id="register-email" required>
+          </div>
+          <div class="form-field">
+            <label>Senha</label>
+            <input type="password" id="register-password" required minlength="6">
+          </div>
+          <button class="btn btn-primary btn-full" type="submit">Criar conta</button>
+        </form>
+      </div>
+      <button class="modal-close" id="auth-close" aria-label="Fechar">✕</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
