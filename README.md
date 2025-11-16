@@ -9,7 +9,7 @@
 
 **Um sistema completo e moderno de gerenciamento de academia com interface responsiva e design elegante.**
 
-[🌐 Demo](#-demo-visual) • [📖 Docs](#-documentação) • [🚀 Quick Start](#-quick-start) • [💬 Suporte](#-suporte)
+[📸 Screenshots](#-screenshots) • [🚀 Quick Start](#-quick-start) • [💬 Suporte](#-suporte)
 
 </div>
 
@@ -32,39 +32,37 @@
 
 ---
 
-## 🎬 Demo Visual
+## 📸 Screenshots
 
-### 📱 Desktop Experience
-```
-┌────────────────────────────────────────────────────┐
-│  🏋️  ACADEMIA PRIME  ⏰  12:34:56                  │
-├────────────────────────────────────────────────────┤
-│                                                    │
-│   Treine Forte. Evolua Sempre.                   │
-│   Sua transformação começa agora!                │
-│                                                    │
-│   [COMECE AGORA] [VER PLANOS]                    │
-│                                                    │
-│   ┌─────────────┬──────────┬─────────┐            │
-│   │ 200 alunos  │ 24/7     │ 19 profs│            │
-│   └─────────────┴──────────┴─────────┘            │
-│                                                    │
-└────────────────────────────────────────────────────┘
-```
+### 🏠 Home - Desktop
+![Home Desktop](https://via.placeholder.com/1200x600?text=Home+Desktop+-+Academia+Prime)
 
-### 📲 Mobile Experience
-```
-┌──────────────┐
-│  📱 MENU     │
-├──────────────┤
-│ Home        │
-│ Serviços    │
-│ Planos      │
-│ Aluno       │
-│ Academia    │
-│ Avaliação   │
-└──────────────┘
-```
+*Screenshot da página inicial com hero section, planos e features.*
+
+### 📱 Home - Mobile
+![Home Mobile](https://via.placeholder.com/400x800?text=Home+Mobile+-+Academia+Prime)
+
+*Layout responsivo da home em dispositivo móvel.*
+
+### 💪 Área do Aluno - Desktop
+![Área do Aluno](https://via.placeholder.com/1200x600?text=Área+do+Aluno+-+Ficha+de+Treino)
+
+*Editor de fichas de treino com seleção de dias e exercícios.*
+
+### � Avaliação Médica
+![Avaliação Médica](https://via.placeholder.com/1200x600?text=Agendamento+de+Avaliação+Médica)
+
+*Página de agendamento com seleção de data, hora e médico.*
+
+### 🏋️ Galeria - Conhecer a Academia
+![Galeria](https://via.placeholder.com/1200x600?text=Galeria+da+Academia+-+Cards+Responsivos)
+
+*Galeria de fotos da academia com cards responsivos.*
+
+### 📱 Mobile Menu
+![Mobile Menu](https://via.placeholder.com/400x600?text=Mobile+Menu+Hamburguês)
+
+*Menu mobile hamburguês em ação.*
 
 ---
 
