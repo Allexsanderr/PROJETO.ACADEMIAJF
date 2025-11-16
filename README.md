@@ -37,7 +37,6 @@
 ### Capturas do Projeto
 
 ![Screenshot 1](screenshots/Captura%20de%20tela%202025-11-16%20081512.png)
-![Screenshot 2](screenshots/Captura%20de%20tela%202025-11-16%20081426.png)
 ![Screenshot 3](screenshots/Captura%20de%20tela%202025-11-16%20081303.png)
 ![Screenshot 4](screenshots/Captura%20de%20tela%202025-11-16%20081226.png)
 ![Screenshot 5](screenshots/Captura%20de%20tela%202025-11-16%20081107.png)
