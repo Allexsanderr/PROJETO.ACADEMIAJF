@@ -92,15 +92,6 @@
 ✓ Menu hamburguês inteligente
 ```
 
-### 💡 **Modo Offline Inteligente**
-```javascript
-✓ Sincronização copy-on-persist
-✓ Dados salvos em localStorage
-✓ Detecção automática de conectividade
-✓ Fallback transparente
-✓ Sem perda de dados
-```
-
 ---
 
 ## 📁 Estrutura do Projeto
@@ -196,28 +187,6 @@ medical-appts     → [{date, time, doctor, notes}]
 ```
 
 ---
-
-## 🔐 Segurança Enterprise
-
-```
-🔒 PROTEÇÃO DE SENHAS
-├─ SHA-256 Hashing
-├─ Salt Aleatório (16 bytes)
-├─ Validação client e server
-└─ Nenhuma senha em plaintext
-
-🔑 GERENCIAMENTO DE TOKENS
-├─ Gerados com secrets.token_hex(24)
-├─ Armazenados em header X-Auth-Token
-├─ Stateless e seguros
-└─ Validação em cada request
-
-🛡️ CORS E HEADERS
-├─ CORS habilitado com segurança
-├─ Content-Type validation
-├─ Headers de segurança
-└─ Proteção contra ataques
-```
 
 ---
 
@@ -320,18 +289,6 @@ Banner atualiza ✅
 
 ## 🌟 Funcionalidades Avançadas
 
-### 📡 Modo Offline
-```javascript
-// Copy-on-persist pattern
-localStorage PRIMEIRO (sempre salva)
-  ↓
-Se online → API em background
-  ↓
-Se offline → localStorage = source of truth
-  ↓
-Se API falha → Fallback automático
-```
-
 ### 🔔 Lembretes
 ```javascript
 renderReminders() {
@@ -355,57 +312,12 @@ Contraste perfeito!
 
 ---
 
-## 📈 Métricas de Performance
-
-```
-⚡ Lighthouse Scores
-├─ Performance:    95+ 🟢
-├─ Accessibility:  92+ 🟢
-├─ Best Practices: 90+ 🟢
-└─ SEO:            93+ 🟢
-
-📦 Bundle Size
-├─ HTML:    ~45 KB
-├─ CSS:     ~8 KB
-├─ JS:      ~15 KB
-└─ Total:   ~68 KB (zero deps!)
-
-⏱️ Load Time
-├─ First Paint:    < 1s
-├─ Interactive:    < 2s
-└─ Complete:       < 1.5s
-```
 
 ---
 
-## 🤝 Contribuindo
-
-```bash
-# 1. Fork o projeto
-# 2. Clone sua cópia
-git clone https://github.com/seu-user/PROJETO.ACADEMIAJF.git
-
-# 3. Crie uma branch
-git checkout -b feature/sua-feature
-
-# 4. Commit suas mudanças
-git commit -m 'Add: descrição'
-
-# 5. Push para a branch
-git push origin feature/sua-feature
-
-# 6. Abra um Pull Request
-```
 
 ---
 
-## 📞 Suporte
-
-| Canal | Link |
-|-------|------|
-| 🐛 **Issues** | [GitHub Issues](https://github.com/Allexsanderr/PROJETO.ACADEMIAJF/issues) |
-| 💬 **Discussões** | [GitHub Discussions](https://github.com/Allexsanderr/PROJETO.ACADEMIAJF/discussions) |
-| 📧 **Email** | academia@prime.com |
 
 ---
 
