@@ -1,6 +1,20 @@
 # Academia Prime
 
-Um sistema completo de gerenciamento de academia com frontend responsivo e backend Python. A plataforma oferece funcionalidades de registro, login, edição de fichas de treino, agendamento de avaliações médicas e galeria de fotos da academia.
+Um sistema completo de gerenciamento de academia com frontend responsivo e moderno. A plataforma oferece funcionalidades de registro, login, edição de fichas de treino, agendamento de avaliações médicas e galeria de fotos da academia.
+
+## 📸 Screenshots
+
+### Home - Desktop
+![Home Desktop](https://via.placeholder.com/800x400?text=Home+Desktop)
+
+### Área do Aluno
+![Área do Aluno](https://via.placeholder.com/800x400?text=Área+do+Aluno)
+
+### Conhecer a Academia - Galeria
+![Galeria](https://via.placeholder.com/800x400?text=Galeria+Fotos)
+
+### Mobile Responsivo
+![Mobile](https://via.placeholder.com/400x600?text=Mobile+Responsivo)
 
 ## 🚀 Características
 
@@ -27,28 +41,31 @@ ACADEMIA/
 ├── plans.json                # Fichas de treino persistidas
 ├── sessions.json             # Sessões ativas
 ├── .gitignore               # Configuração Git
-└── .github/copilot-instructions.md # Documentação para AI agents
+└── README.md                # Este arquivo
 ```
 
 ## 🛠️ Tecnologias
 
 - **Frontend**: HTML5, CSS3, JavaScript Vanilla (sem frameworks)
-- **Backend**: Python 3.6+ (ThreadingHTTPServer)
 - **Persistência**: JSON (localStorage no cliente, arquivos no servidor)
 - **Segurança**: SHA-256 password hashing + stateless tokens
 - **Design**: Poppins font, cores: #0b0b0b (dark), #ffcc00 (yellow accent)
 
-## 🚀 Como Rodar
+## 🚀 Como Usar
 
-### Backend (Python)
-```bash
-cd "c:\Users\allex\Desktop\PROJETO ACADEMIA\ACADEMIA"
-python server.py
-# Servidor iniciado em http://localhost:8081
-```
+### 1️⃣ Acesso Online
+Abra seu navegador e acesse o arquivo `index.html` diretamente ou hospede em um servidor web.
 
-### Frontend
+### 2️⃣ Desenvolvimento Local
 ```bash
+# Clone o repositório
+git clone https://github.com/Allexsanderr/PROJETO.ACADEMIAJF.git
+cd PROJETO.ACADEMIAJF
+
+# Abra index.html em seu navegador
+# Ou use um servidor HTTP simples
+
+# Para teste com backend (opcional)
 cd "c:\Users\allex\Desktop\PROJETO ACADEMIA\ACADEMIA"
 python -m http.server 8000
 # Acesse em http://localhost:8000
@@ -68,18 +85,8 @@ O site é totalmente responsivo com breakpoints:
 
 - Senhas: SHA-256 com salt aleatório (16 bytes hex)
 - Tokens: Gerados com `secrets.token_hex(24)` (48 caracteres)
-- CORS: Habilitado para `*` com headers apropriados
 - Autenticação: Baseada em header `X-Auth-Token`
-
-## 📋 Endpoints da API
-
-| Método | Endpoint | Descrição |
-|--------|----------|-----------|
-| GET | `/api/ping` | Verifica conectividade |
-| POST | `/api/register` | Registro de novo usuário |
-| POST | `/api/login` | Login e geração de token |
-| GET | `/api/plan` | Obtém ficha de treino (requer token) |
-| PUT | `/api/plan` | Salva ficha de treino (requer token) |
+- CORS: Habilitado para segurança entre domínios
 
 ## 💾 Dados Persistidos
 
@@ -87,12 +94,7 @@ O site é totalmente responsivo com breakpoints:
 - `gymUser`: Dados do usuário logado
 - `gymToken`: Token de autenticação
 - `plan:{email}`: Ficha de treino do usuário
-- `medical-appointments`: Avaliações agendadas
-
-### Arquivos JSON (Servidor)
-- `users.json`: `{email: {name, salt, hash}}`
-- `plans.json`: `{email: {dia: [...exercícios]}}`
-- `sessions.json`: `{token: email}`
+- `medical-appointments`: Avaliações agendadas (data, hora, médico, notas)
 
 ## 🎨 Customização
 
@@ -124,28 +126,39 @@ Google Fonts: Poppins (300, 400, 600, 800)
 - Emojis como placeholders para fotos
 - Sem dependências externas
 
-## 📝 Fluxos Principais
+## 📝 Funcionalidades Principais
 
-### Registro/Login
-1. Usuário preenche formulário
-2. Dados validados (client-side e server-side)
-3. Senha hasheada com salt
-4. Token gerado e armazenado
-5. Redirecionado para "Área do Aluno"
+### 🔐 Autenticação
+- Registro de novo usuário
+- Login seguro com validação
+- Modo offline com localStorage
+- Recuperação de senha
 
-### Edição de Ficha
-1. Usuário seleciona dia da semana
-2. Adiciona/edita/remove exercícios
-3. Cada exercício salvo individualmente (botão 💾)
-4. Resumo do dia exibido em card destacado
-5. Dados persistem em localStorage e API
+### 📋 Ficha de Treino
+- Criar/editar/deletar exercícios
+- Organização por dia da semana
+- Salvar treino por exercício individual
+- Resumo diário com contagem e emojis
+- Sincronização automática
 
-### Agendamento de Avaliação
-1. Usuário acessa `avaliacao.html`
-2. Seleciona data (bloqueia passado), hora, médico
-3. Adiciona notas opcionais
-4. Salva em localStorage
-5. Banner na home atualizado automaticamente
+### 🏥 Avaliações Médicas
+- Agendamento com data e hora
+- Seleção de médico
+- Notas adicionais
+- Histórico de avaliações
+- Lembretes automáticos na home
+
+### 🏋️ Galeria
+- Fotos/cards da academia
+- Responsive em desktop, tablet e mobile
+- Overlay com descrição ao hover
+- Design moderno com emojis
+
+### 📱 Responsividade
+- Menu hamburguês em mobile
+- Layout adaptado (<768px)
+- Botões com tap targets aumentados
+- Tela inteira otimizada para cada tamanho
 
 ## 🧪 Testes Recomendados
 
